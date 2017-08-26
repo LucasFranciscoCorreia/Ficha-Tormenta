@@ -6,7 +6,7 @@ public class Nivel {
 	private int expAtual;
 	private int expProximoNivel;
 	private int i;
-	
+
 	public int getLvlAtual() {
 		return lvlAtual;
 	}
@@ -18,29 +18,114 @@ public class Nivel {
 	public int getExpProximoNivel() {
 		return expProximoNivel;
 	}
-	
+
 	private void upar(){
+		this.expAtual = expProximoNivel;
+		this.expProximoNivel += i*1000;
 		//TODO subir nivel de personagem, classe  e alterar exp para proximo nivel
 	}
-	
-	public Nivel(int lvlAtual, int ouroInicial){
+
+	public Nivel(int lvlAtual){
 		this.lvlAtual = lvlAtual;
 		this.expProximoNivel = 0;
 		for(i = 1;i <= lvlAtual;i++){
-			this.expAtual = expProximoNivel;
-			this.expProximoNivel += i*1000;
+			upar();
 		}
-		Moedas.TO.setMoedas(ouroInicial);;
+		Moedas.TO.setMoedas(ouroInicial());;
+	}
+
+	private int ouroInicial() {
+		int res = 0;
+		switch(this.lvlAtual){
+
+		case 1:
+			res = 100;
+			break;
+
+		case 2: 
+			res = 300;
+			break;
+
+		case 3: 
+			res = 600;
+			break;
+
+		case 4: 
+			res = 1000;
+			break;
+
+		case 5: 
+			res = 2000;
+			break;
+
+		case 6:
+			res = 3000;
+			break;
+
+		case 7: 
+			res = 5000;
+			break;
+
+		case 8: 
+			res = 7000;
+			break;
+
+		case 9: 
+			res = 10000;
+			break;
+
+		case 10: 
+			res = 13000;
+			break;
+
+		case 11:
+			res = 19000;
+			break;
+
+		case 12:
+			res = 27000;
+			break;
+
+		case 13:
+			res = 36000;
+			break;
+
+		case 14:
+			res = 49000;
+			break;
+
+		case 15:
+			res = 66000;
+			break;
+
+		case 16:
+			res = 88000;
+			break;
+
+		case 17:
+			res = 110000;
+			break;
+
+		case 18:
+			res = 150000;
+			break;
+
+		case 19:
+			res = 200000;
+			break;
+
+		case 20:
+			res = 260000;
+			break;
+
+		default:
+			res = 100;
+		}
+
+		return res;
 	}
 
 	public void ganharExp(int i){
 		this.expAtual += i;
-	}
-	
-	public static void main(String[] args) {
-		Nivel n = new Nivel(2,100);
-		System.out.println(n.getExpAtual());
-		System.out.println(n.getExpProximoNivel());
-		System.out.println(n.getLvlAtual());
 	}
 }
