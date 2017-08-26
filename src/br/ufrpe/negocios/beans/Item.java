@@ -5,6 +5,7 @@ public class Item {
 	private String nome, definicao;
 	private float peso;
 	private boolean isAnimal;
+	private boolean isVeiculo;
 	
 	public Item(String nome, float peso,boolean isAnimal, String definicao){
 		this.nome = nome;
@@ -13,14 +14,23 @@ public class Item {
 		this.definicao = definicao;
 	}
 	
-	public Item(String nome, boolean isAnimal, String definicao){
+	public Item(String nome, boolean isAnimal, String definicao, boolean isVeiculo){
 		this.nome = nome;
 		this.isAnimal = isAnimal;
 		this.definicao = definicao;
+		this.isVeiculo = isVeiculo;
 	}
 
 	public String getNome() {
 		return nome;
+	}
+	
+	public boolean isVeiculo() {
+		return isVeiculo;
+	}
+
+	public void setVeiculo(boolean isVeiculo) {
+		this.isVeiculo = isVeiculo;
 	}
 
 	public void setNome(String nome) {

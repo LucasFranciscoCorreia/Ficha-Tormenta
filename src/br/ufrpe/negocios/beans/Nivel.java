@@ -19,6 +19,9 @@ public class Nivel {
 		return expProximoNivel;
 	}
 
+	public int getMeioNivel(){
+		return this.lvlAtual/2;
+	}
 	private void upar(){
 		this.expAtual = expProximoNivel;
 		this.expProximoNivel += i*1000;

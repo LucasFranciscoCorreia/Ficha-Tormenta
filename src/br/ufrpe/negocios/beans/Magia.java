@@ -1,8 +1,9 @@
 package br.ufrpe.negocios.beans;
 public class Magia {
-	String definicao;
-	String nome;
-	String beneficio;
+	private String definicao;
+	private String nome;
+	private String beneficio;
+	private int nivel;
 	
 	public Magia(String nome, String definicao, String beneficio){
 		this.nome = nome;
