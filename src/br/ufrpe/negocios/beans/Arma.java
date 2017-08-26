@@ -10,8 +10,8 @@ public class Arma extends Item{
 	private String tipo;
 	private Projetil projetil;
 	
-	public Arma(String nome, boolean ranged, String dado, int margemCritico, int critico, int alcance, String tipo, float peso) {
-		super(nome, peso, false);
+	public Arma(String nome, String definicao, boolean ranged, String dado, int margemCritico, int critico, int alcance, String tipo, float peso) {
+		super(nome, peso, false, definicao);
 		this.ranged = ranged;
 		this.dado = dado;
 		this.margemCritico = margemCritico;
@@ -20,8 +20,8 @@ public class Arma extends Item{
 		this.tipo = tipo;
 		this.projetil = null;
 	}
-	public Arma(String nome, boolean ranged, String dado, int margemCritico, int critico, int alcance, String tipo, float peso, Projetil projetil) {
-		super(nome, peso, false);
+	public Arma(String nome, String definicao,boolean ranged, String dado, int margemCritico, int critico, int alcance, String tipo, float peso, Projetil projetil) {
+		super(nome, peso, false, definicao);
 		this.ranged = ranged;
 		this.dado = dado;
 		this.margemCritico = margemCritico;

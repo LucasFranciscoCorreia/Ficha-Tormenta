@@ -6,8 +6,8 @@ public class Projetil extends Item{
 	private int quantidadeCarregado;
 	private int quantidadePorPacote;
 	
-	public Projetil(boolean neededAmmo, String nome, String beneficio, int quantidade){
-		super(nome, 0, false);
+	public Projetil(boolean neededAmmo, String nome, String beneficio, int quantidade, String definicao){
+		super(nome, 0, false, definicao);
 		this.neededAmmo = neededAmmo;
 		this.beneficio = beneficio;
 		this.quantidade = quantidade;

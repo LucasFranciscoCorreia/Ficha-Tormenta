@@ -9,7 +9,6 @@ public class Personagem {
 	private Nivel nivel;
 	private Arma arma;
 	
-	
 	public static void main(String[] args) {
 		Personagem p = new Personagem();
 	}
