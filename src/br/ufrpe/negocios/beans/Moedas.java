@@ -23,7 +23,13 @@ public enum Moedas {
 	void ganhar(int i){
 		this.i += i;
 	}
-	
+	double getPesoTotal(){
+		double res = Moedas.TL.getMoedas()*0.01
+				+ Moedas.TO.getMoedas()*0.01
+				+ Moedas.TP.getMoedas()*0.01
+				+ Moedas.TS.getMoedas()*0.01;
+		return res;
+	}
 	void trocar(Moedas b, int i){
 		if(this.prioridade > b.prioridade){
 			if(this.getMoedas() >= i){
@@ -39,6 +45,11 @@ public enum Moedas {
 			}
 		}
 	}
-	
-	
+	public String toString(){
+		String res = "TL: " + Integer.toString(Moedas.TL.getMoedas()) +
+				"\t TO: " + Integer.toString(Moedas.TO.getMoedas()) +
+				"\t TP: " + Integer.toString(Moedas.TP.getMoedas()) +
+				"\t T$: " + Integer.toString(Moedas.TS.getMoedas());
+		return res;
+	}
 }

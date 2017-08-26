@@ -1,13 +1,14 @@
 package br.ufrpe.negocios.beans;
 public class Personagem {
-	private Atributos status;
-	private String nome, tendencia, nomeJogador, classe;
-	private int nivel, classeArmaadura;
+	private Atributos forca, destreza, constituicao, inteligencia, sabedoria, carisma;
+	private String nome, nomeJogador, classe;
+	private int classeArmaadura;
 	private float BBA;
-	private Moedas bolsa;
+	private Moedas TL, TO, TP, TS;
+	private Tendencia t;
+	private Nivel nivel;
 	
 	public static void main(String[] args) {
-		Personagem p = new Personagem();	
-		
+		Personagem p = new Personagem();
 	}
 }
