@@ -7,8 +7,7 @@ public class Personagem {
 	private Moedas bolsa;
 	
 	public static void main(String[] args) {
-		Personagem p = new Personagem();
-		p.bolsa.TL.setMoedas(10);
-		System.out.println(p.bolsa.TL.getMoedas());	
+		Personagem p = new Personagem();	
+		
 	}
 }

@@ -28,13 +28,13 @@ public enum Moedas {
 		if(this.prioridade > b.prioridade){
 			if(this.getMoedas() >= i){
 				this.gastar(i);
-				b.ganhar(i*10);
+				b.ganhar((int)(i*Math.pow(10, (this.prioridade - b.prioridade))));
 			}else{
 				//TODO Sem moedas suficientes exception
 			}
 		}else{
-			if(this.getMoedas() >= i*10){
-				this.gastar(10*i);
+			if(this.getMoedas() >= (int)(i*Math.pow(10, b.prioridade-this.prioridade))){
+				this.gastar((int)(i*Math.pow(10, (b.prioridade - this.prioridade))));
 				b.ganhar(i);
 			}
 		}
