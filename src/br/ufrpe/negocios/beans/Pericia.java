@@ -46,6 +46,4 @@ public class Pericia {
 	public void setBonus(int bonus) {
 		this.bonus = bonus;
 	}
-	
-	
 }
