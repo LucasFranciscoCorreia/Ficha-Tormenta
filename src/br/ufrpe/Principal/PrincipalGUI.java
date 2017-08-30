@@ -1,10 +1,9 @@
-package Principal;
+package br.ufrpe.Principal;
 
 import javafx.application.Application;
 import javafx.stage.Stage;
 
 public class PrincipalGUI extends Application {
-
 	@Override
 	public void start(Stage primaryStage) {
 		

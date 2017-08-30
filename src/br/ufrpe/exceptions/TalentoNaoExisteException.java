@@ -1,4 +1,4 @@
-package exceptions;
+package br.ufrpe.exceptions;
 
 import br.ufrpe.negocios.beans.Talento;
 

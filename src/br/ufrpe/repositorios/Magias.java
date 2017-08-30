@@ -3,9 +3,10 @@ package br.ufrpe.repositorios;
 import java.util.LinkedList;
 import java.util.List;
 
+import br.ufrpe.exceptions.MagiaJaExisteException;
+import br.ufrpe.exceptions.MagiaNaoCadastradaException;
 import br.ufrpe.negocios.beans.Magia;
-import exceptions.MagiaJaExisteException;
-import exceptions.MagiaNaoCadastradaException;
+
 
 public class Magias {
 	private List<Magia> magias;

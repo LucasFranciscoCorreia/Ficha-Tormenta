@@ -1,6 +1,6 @@
 package br.ufrpe.negocios.beans;
 
-import exceptions.AtributoInvalidoException;
+import br.ufrpe.exceptions.AtributoInvalidoException;
 
 public class Resistencias {
 	public static int getTesteFortitude(int meioNivel, Atributos constituicao, int outros) throws AtributoInvalidoException{

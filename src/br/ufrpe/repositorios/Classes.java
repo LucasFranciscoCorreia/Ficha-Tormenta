@@ -3,9 +3,9 @@ package br.ufrpe.repositorios;
 import java.util.LinkedList;
 import java.util.List;
 
+import br.ufrpe.exceptions.ClasseJaCadastradoException;
+import br.ufrpe.exceptions.ClasseNaoExisteException;
 import br.ufrpe.negocios.beans.Classe;
-import exceptions.ClasseJaCadastradoException;
-import exceptions.ClasseNaoExisteException;
 
 public class Classes {
 	private List<Classe> classes;

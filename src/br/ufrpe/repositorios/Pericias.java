@@ -3,8 +3,9 @@ package br.ufrpe.repositorios;
 import java.util.LinkedList;
 import java.util.List;
 
+import br.ufrpe.exceptions.PericiaNaoClassificadaException;
 import br.ufrpe.negocios.beans.Pericia;
-import exceptions.PericiaNaoClassificadaException;
+
 
 public class Pericias {
 	List<Pericia> pericias = new LinkedList<>();

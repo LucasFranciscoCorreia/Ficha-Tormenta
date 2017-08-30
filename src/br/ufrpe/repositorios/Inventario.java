@@ -3,8 +3,9 @@ package br.ufrpe.repositorios;
 import java.util.LinkedList;
 import java.util.List;
 
+import br.ufrpe.exceptions.ItemNaoCadastradoException;
 import br.ufrpe.negocios.beans.Item;
-import exceptions.ItemNaoCadastradoException;
+
 
 public class Inventario {
 

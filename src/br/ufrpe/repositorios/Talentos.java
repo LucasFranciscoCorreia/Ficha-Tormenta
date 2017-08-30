@@ -3,8 +3,9 @@ package br.ufrpe.repositorios;
 import java.util.LinkedList;
 import java.util.List;
 
+import br.ufrpe.exceptions.TalentoNaoExisteException;
 import br.ufrpe.negocios.beans.Talento;
-import exceptions.TalentoNaoExisteException;
+
 
 public class Talentos {
 	private List<Talento> talentos;
