@@ -22,10 +22,10 @@ public class Pericias {
 				this.pericias.remove(p);				
 			}
 			else{
-				//TODO exception item nao existe				
+				//TODO exception pericia nao existe				
 			}
 		}else{
-			//TODO exception item nulo
+			//TODO exception pericia nulo
 		}
 	}
 }

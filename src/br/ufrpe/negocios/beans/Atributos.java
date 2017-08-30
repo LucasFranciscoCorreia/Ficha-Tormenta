@@ -6,7 +6,7 @@ public enum Atributos {
 	Atributos(int i){
 		this.i = i;
 	}
-	void setValorAtributo(int i){
+	public void setValorAtributo(int i){
 		this.i = i;
 	}
 	int getValorAtributo(){

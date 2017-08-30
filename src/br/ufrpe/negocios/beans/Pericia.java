@@ -1,4 +1,7 @@
 package br.ufrpe.negocios.beans;
+
+import br.ufrpe.negocios.Personagem;
+
 public class Pericia {
 	private String nome;
 	private boolean graduado;

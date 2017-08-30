@@ -3,12 +3,15 @@ public class Magia {
 	private String definicao;
 	private String nome;
 	private String beneficio;
+	private String dano;
 	private int nivel;
 	
-	public Magia(String nome, String definicao, String beneficio){
+	public Magia(String nome, String definicao, String beneficio, String dano, int nivel){
+		this.nivel = nivel;
 		this.nome = nome;
 		this.definicao = definicao;
 		this.beneficio = beneficio;
+		this.dano = dano;
 	}
 
 	public String getDefinicao() {
@@ -33,6 +36,22 @@ public class Magia {
 
 	public void setBeneficio(String beneficio) {
 		this.beneficio = beneficio;
+	}
+
+	public String getDano() {
+		return dano;
+	}
+
+	public void setDano(String dano) {
+		this.dano = dano;
+	}
+
+	public int getNivel() {
+		return nivel;
+	}
+
+	public void setNivel(int nivel) {
+		this.nivel = nivel;
 	}
 	
 }
