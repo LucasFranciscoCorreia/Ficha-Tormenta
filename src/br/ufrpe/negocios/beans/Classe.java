@@ -1,6 +1,6 @@
 package br.ufrpe.negocios.beans;
 public class Classe {
-	private String nome;
+	private String nome, habilidades;
 	private float BBA;
 	private int nivel;
 	private boolean magica;
