@@ -4,27 +4,33 @@ import java.util.LinkedList;
 import java.util.List;
 
 import br.ufrpe.negocios.beans.Magia;
+import exceptions.MagiaJaExisteException;
+import exceptions.MagiaNaoCadastradaException;
 
 public class Magias {
 	private List<Magia> magias;
-	
+
 	public Magias(){
 		magias = new LinkedList<>();
 	}
-	
-	public void addMagia(Magia m){
+
+	public void addMagia(Magia m) throws MagiaJaExisteException{
 		if(m != null && !magias.contains(m)){
 			magias.add(m);
 		}else{
-			//TODO exception ja existe magia
+			throw new MagiaJaExisteException(m);
 		}
 	}
-	
-	public void removeMagia(Magia m){
-		if(m != null && magias.contains(m)){
-			magias.remove(m);
+
+	public void removeMagia(Magia m) throws MagiaNaoCadastradaException{
+		if(m != null){
+			if(magias.contains(m)){
+				magias.remove(m);				 
+			}else{
+				throw new MagiaNaoCadastradaException(m);
+			}
 		}else{
-			//TODO exception nao existe magia
+			throw new MagiaNaoCadastradaException();
 		}
 	}
 }

@@ -4,35 +4,40 @@ import java.util.LinkedList;
 import java.util.List;
 
 import br.ufrpe.negocios.beans.Item;
+import exceptions.ItemNaoCadastradoException;
 
 public class Inventario {
-	
+
 	private List<Item> inventario = new LinkedList<>();
 	private double pesoTotal;
-	
+
 	public List<Item> getInventario() {
 		return inventario;
 	}
-	
+
 	public double getPesoTotal() {
 		return pesoTotal;
 	}
-	
-	public void adicionar(Item item){
+
+	public void adicionar(Item item) throws ItemNaoCadastradoException{
 		if(item != null){
 			this.inventario.add(item);
 			this.pesoTotal += item.getPeso();
 		}else{
-			//TODO exception item vazio
+			throw new ItemNaoCadastradoException();
 		}
 	}
-	
-	public void remover(Item item){
-		if(item != null && this.inventario.contains(item)){
-			this.remover(item);
-			this.pesoTotal -= item.getPeso();
+
+	public void remover(Item item) throws ItemNaoCadastradoException{
+		if(item != null){
+			if(this.inventario.contains(item)){
+				this.remover(item);
+				this.pesoTotal -= item.getPeso();
+			}else{
+				throw new ItemNaoCadastradoException(item);
+			}
 		}else{
-			//TODO exception item vazio ou nao existe no inventario
+			throw new ItemNaoCadastradoException();
 		}
 	}	
 }

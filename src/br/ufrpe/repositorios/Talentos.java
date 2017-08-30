@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 import br.ufrpe.negocios.beans.Talento;
+import exceptions.TalentoNaoExisteException;
 
 public class Talentos {
 	private List<Talento> talentos;
@@ -11,18 +12,22 @@ public class Talentos {
 	public Talentos(){
 		talentos = new LinkedList<>();
 	}
-	public void addTalento(Talento t){
+	public void addTalento(Talento t) throws TalentoNaoExisteException{
 		if(t != null){
 			this.talentos.add(t);
 		}else{
-			//TODO exception talento invalido
+			throw new TalentoNaoExisteException();
 		}
 	}
-	public void removeTalento(Talento t){
-		if(t != null && talentos.contains(t)){
-			this.talentos.remove(t);
+	public void removeTalento(Talento t) throws TalentoNaoExisteException{
+		if(t != null){
+			if(talentos.contains(t)){
+				this.talentos.remove(t);				
+			}else{
+				throw new TalentoNaoExisteException(t);
+			}
 		}else{
-			//TODO exception talento nao cadastrado;
+			throw new TalentoNaoExisteException();
 		}
 	}
 }

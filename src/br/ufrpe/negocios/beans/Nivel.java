@@ -25,16 +25,22 @@ public class Nivel {
 	private void upar(){
 		this.expAtual = expProximoNivel;
 		this.expProximoNivel += i*1000;
+		this.lvlAtual++;
 		//TODO subir nivel de personagem, classe  e alterar exp para proximo nivel
 	}
 
-	public Nivel(int lvlAtual){
-		this.lvlAtual = lvlAtual;
-		this.expProximoNivel = 0;
-		for(i = 1;i <= lvlAtual;i++){
-			upar();
+
+	public Nivel(int lvlAtual) throws NivelInvalidoException{
+		if(lvlAtual >0){
+			this.lvlAtual = lvlAtual;
+			this.expProximoNivel = 0;
+			for(i = 1;i <= lvlAtual;i++){
+				upar();
+			}
+			Moedas.TO.setMoedas(ouroInicial());;
+		}else{
+			throw new NivelInvalidoException();
 		}
-		Moedas.TO.setMoedas(ouroInicial());;
 	}
 
 	private int ouroInicial() {
@@ -130,5 +136,10 @@ public class Nivel {
 
 	public void ganharExp(int i){
 		this.expAtual += i;
+		if(expAtual >= expProximoNivel){
+			int salvar = expAtual;
+			upar();
+			expAtual = salvar;
+		}
 	}
 }

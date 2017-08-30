@@ -4,28 +4,29 @@ import java.util.LinkedList;
 import java.util.List;
 
 import br.ufrpe.negocios.beans.Pericia;
+import exceptions.PericiaNaoClassificadaException;
 
 public class Pericias {
 	List<Pericia> pericias = new LinkedList<>();
 	
-	public void addPericia(Pericia p){
+	public void addPericia(Pericia p) throws PericiaNaoClassificadaException{
 		if(p != null){
 			this.pericias.add(p);
 		}else{
-			//TODO exception item nulo
+			throw new PericiaNaoClassificadaException();
 		}
 	}
 	
-	public void removePericia(Pericia p){
+	public void removePericia(Pericia p) throws PericiaNaoClassificadaException{
 		if(p != null){
 			if(pericias.contains(p)){
 				this.pericias.remove(p);				
 			}
 			else{
-				//TODO exception pericia nao existe				
+				throw new PericiaNaoClassificadaException(p);
 			}
 		}else{
-			//TODO exception pericia nulo
+			throw new PericiaNaoClassificadaException();
 		}
 	}
 }
