@@ -5,6 +5,7 @@ import br.ufrpe.negocios.beans.Armadura;
 import br.ufrpe.negocios.beans.Atributos;
 import br.ufrpe.negocios.beans.Moedas;
 import br.ufrpe.negocios.beans.Nivel;
+import br.ufrpe.negocios.beans.Raca;
 import br.ufrpe.negocios.beans.Tendencia;
 import br.ufrpe.repositorios.Classes;
 import br.ufrpe.repositorios.Inventario;
@@ -16,7 +17,7 @@ public class Personagem {
 	
 	private Atributos forca, destreza, constituicao, inteligencia, sabedoria, carisma;
 	private String nome, nomeJogador, divindade;
-	private int classeArmadura;
+	private int classeArmadura, PV, PM;
 	private Classes classes;
 	private Moedas TL, TO, TP, TS;
 	private Tendencia tendencia;
@@ -27,10 +28,42 @@ public class Personagem {
 	private Nivel nivel;
 	private Arma arma;
 	private Armadura armadura;
+	private Raca raca;
 	
+	public int getPV() {
+		return PV;
+	}
+
+
+	public void setPV(int pV) {
+		PV = pV;
+	}
+
+
+	public int getPM() {
+		return PM;
+	}
+
+
+	public void setPM(int pM) {
+		PM = pM;
+	}
+
+
 	public Personagem(Nivel n){
 		this.nivel = n;
 	}
+
+	
+	public Raca getRaca() {
+		return raca;
+	}
+
+
+	public void setRaca(Raca raca) {
+		this.raca = raca;
+	}
+
 
 	public String getNome() {
 		return nome;

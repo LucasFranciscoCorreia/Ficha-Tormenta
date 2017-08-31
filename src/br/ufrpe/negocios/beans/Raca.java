@@ -1,11 +1,14 @@
 package br.ufrpe.negocios.beans;
+
+import java.util.List;
+
 public class Raca {
 	private String nome;
-	private String beneficio;
+	private List<String> tracosRaciais;
 	
-	public Raca(String nome, String beneficio){
+	public Raca(String nome, List<String>  tracosRaciais){
 		this.nome = nome;
-		this.beneficio = beneficio;
+		this.tracosRaciais = tracosRaciais;
 	}
 
 	public String getNome() {
@@ -16,12 +19,13 @@ public class Raca {
 		this.nome = nome;
 	}
 
-	public String getBeneficio() {
-		return beneficio;
+	public List<String> getTracosRaciais() {
+		return tracosRaciais;
 	}
 
-	public void setBeneficio(String beneficio) {
-		this.beneficio = beneficio;
+	public void setTracosRaciais(List<String> tracosRaciais) {
+		this.tracosRaciais = tracosRaciais;
 	}
+	
 	
 }

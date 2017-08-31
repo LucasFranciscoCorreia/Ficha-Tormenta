@@ -4,9 +4,9 @@ public class Magia {
 	private String nome;
 	private String beneficio;
 	private String dano;
-	private int nivel;
+	private byte nivel;
 	
-	public Magia(String nome, String definicao, String beneficio, String dano, int nivel){
+	public Magia(String nome, String definicao, String beneficio, String dano, byte nivel){
 		this.nivel = nivel;
 		this.nome = nome;
 		this.definicao = definicao;
@@ -50,7 +50,7 @@ public class Magia {
 		return nivel;
 	}
 
-	public void setNivel(int nivel) {
+	public void setNivel(byte nivel) {
 		this.nivel = nivel;
 	}
 	
