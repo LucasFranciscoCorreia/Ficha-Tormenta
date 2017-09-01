@@ -1,5 +1,7 @@
 package br.ufrpe.negocios.beans;
 
+import br.ufrpe.exceptions.NivelInvalidoException;
+
 public class Nivel {
 
 	private int lvlAtual;

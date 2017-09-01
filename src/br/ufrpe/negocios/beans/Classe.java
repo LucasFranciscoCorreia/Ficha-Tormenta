@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Classe {
 	private String nome;
-	List<String> habilidades;
+	List<HabilidadeDeClasse> habilidades;
 	private float BBA; 
 	private byte nivel;
 	private boolean magica;
@@ -63,17 +63,17 @@ public class Classe {
 	}
 	
 
-	public List<String> getHabilidades() {
+	public List<HabilidadeDeClasse> getHabilidades() {
 		return habilidades;
 	}
 
-	public void setHabilidades(List<String> habilidades) {
+	public void setHabilidades(List<HabilidadeDeClasse> habilidades) {
 		this.habilidades = habilidades;
 	}
 	
 	
 
-	public Classe(String nome, List<String> habilidades, float bBA, byte nivel, boolean magica, int pVInicial, byte pVPorNivel, int pMInicial, byte pMPorNivel) {
+	public Classe(String nome, List<HabilidadeDeClasse> habilidades, float bBA, byte nivel, boolean magica, int pVInicial, byte pVPorNivel, int pMInicial, byte pMPorNivel) {
 		super();
 		this.nome = nome;
 		this.habilidades = habilidades;

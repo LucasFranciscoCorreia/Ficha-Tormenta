@@ -1,4 +1,4 @@
-package br.ufrpe.negocios.beans;
+package br.ufrpe.exceptions;
 
 public class NivelInvalidoException extends Exception {
 	public NivelInvalidoException(){
