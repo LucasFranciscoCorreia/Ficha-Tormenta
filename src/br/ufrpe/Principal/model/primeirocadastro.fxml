@@ -131,7 +131,7 @@
                   <JFXTextField fx:id="pmInicial" layoutX="16.0" layoutY="306.0" prefHeight="24.0" prefWidth="165.0" promptText="PM Inicial" />
                   <JFXTextField fx:id="pmNivel" layoutX="207.0" layoutY="306.0" prefHeight="24.0" prefWidth="165.0" promptText="PM Por Nivel" />
                   <Label layoutX="14.0" layoutY="346.0" prefHeight="67.0" prefWidth="323.0" />
-                  <JFXButton fx:id="salvarPersonagem" layoutX="342.0" layoutY="367.0" onAction="#gerar" text="Salvar Personagem" />
+                  <JFXButton fx:id="salvarPersonagem" layoutX="342.0" layoutY="367.0" onAction="#salvarPersonagem" text="Salvar Personagem" />
                </children>
             </AnchorPane>
          </content>

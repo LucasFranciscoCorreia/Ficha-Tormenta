@@ -1,5 +1,6 @@
 package br.ufrpe.repositorios;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import br.ufrpe.exceptions.TalentoNaoExisteException;
 import br.ufrpe.negocios.beans.Talento;
 
 
-public class Talentos {
+public class Talentos implements Serializable{
 	private List<Talento> talentos;
 
 	public Talentos(){

@@ -1,5 +1,8 @@
 package br.ufrpe.negocios.beans;
-public class Talento {
+
+import java.io.Serializable;
+
+public class Talento implements Serializable{
 	private String nome;
 	private String definição;
 	private String beneficios;

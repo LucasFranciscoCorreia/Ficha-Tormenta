@@ -1,6 +1,8 @@
 package br.ufrpe.negocios.beans;
 
-public class Item {
+import java.io.Serializable;
+
+public class Item implements Serializable{
 	
 	private String nome, definicao;
 	private float peso;

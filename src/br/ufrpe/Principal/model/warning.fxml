@@ -11,7 +11,7 @@
       <JFXButton fx:id="okBtn" layoutX="224.0" layoutY="158.0" onAction="#fecharAviso" text="OK" />
       <ImageView fitHeight="105.0" fitWidth="115.0" layoutX="14.0" layoutY="48.0">
          <image>
-            <Image url="@../../../../../../../Documentos/warning.png" />
+            <Image url="br/ufrpe/Principal/model/warning.png" />
          </image>
       </ImageView>
    </children>

@@ -1,6 +1,12 @@
 package br.ufrpe.Principal;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -20,7 +26,7 @@ import javafx.stage.Stage;
 public class ScreenManager implements Initializable{
 	private Personagem personagem;
 	private Stage mainStage;
-	private Scene defaultScene, warning;
+	private Scene defaultScene, warning, campanha;
 	private Stage warningStage;
 	private Pane pane;
 	//private Label warn;
@@ -29,6 +35,7 @@ public class ScreenManager implements Initializable{
 	private ScreenManager(){
 		try {
 			defaultScene = new Scene(FXMLLoader.load(getClass().getResource("model/primeirocadastro.fxml")));
+			campanha = new Scene(FXMLLoader.load(getClass().getResource("model/campanha.fxml")));
 			pane = FXMLLoader.load(getClass().getResource("model/warning.fxml"));
 			warningStage = new Stage();
 			warning = new Scene(pane);
@@ -47,24 +54,54 @@ public class ScreenManager implements Initializable{
 		}
 		return unicInstance;
 	}
+	public void lerPersonagem(){
+		try{
+			FileInputStream fis = new FileInputStream(new File("src/personagem.dat"));
+			ObjectInputStream ois = new ObjectInputStream(fis);
+			this.personagem = (Personagem) ois.readObject();
+		}catch(IOException | ClassNotFoundException e){
+			personagem = null;
+		}
+	}
 
+	public void salvarPersonagem(Personagem p){
+		try {
+			FileOutputStream fout = new FileOutputStream(new File("src/personagem.dat"));
+			ObjectOutputStream oos = new ObjectOutputStream(fout);
+			oos.writeObject(p);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	public void setStage(Stage stage){
 		mainStage = stage;
 	}
 
+	public Personagem getPersonagem(){
+		return this.personagem;
+	}
+	public void setPersonagem(Personagem P){
+		this.personagem = P;
+	}
 	public void telaInicial(){
+		lerPersonagem();
 		if(personagem == null){
 			mainStage.setScene(defaultScene);
 			mainStage.setTitle("Menu Inicial(beta) v1.1");
 			mainStage.show();
 		}else{
-			//TODO tela normal
+			mainStage.setScene(campanha);
+			mainStage.setTitle("Menu Inicial(beta) v1.1");
+			mainStage.show();
 		}
+	}
+	public void abrirCampanha(){
+		mainStage.setScene(campanha);
 	}
 
 	public void showWarning(String warning){
 		Label warn = new Label(warning);
-		warn.setPrefWidth(146);
+		warn.setPrefWidth(140);
 		warn.setPrefHeight(152);
 		warn.setLayoutX(159);
 		warn.setLayoutY(6);

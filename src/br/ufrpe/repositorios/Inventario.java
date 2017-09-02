@@ -1,5 +1,6 @@
 package br.ufrpe.repositorios;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import br.ufrpe.exceptions.ItemNaoCadastradoException;
 import br.ufrpe.negocios.beans.Item;
 
 
-public class Inventario {
+public class Inventario implements Serializable{
 
 	private List<Item> inventario = new LinkedList<>();
 	private double pesoTotal;

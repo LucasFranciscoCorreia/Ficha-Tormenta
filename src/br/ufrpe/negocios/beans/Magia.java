@@ -1,5 +1,8 @@
 package br.ufrpe.negocios.beans;
-public class Magia {
+
+import java.io.Serializable;
+
+public class Magia implements Serializable{
 	private String definicao;
 	private String nome;
 	private String beneficio;

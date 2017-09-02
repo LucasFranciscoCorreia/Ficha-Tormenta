@@ -1,8 +1,10 @@
 package br.ufrpe.negocios.beans;
 
+import java.io.Serializable;
+
 import br.ufrpe.negocios.Personagem;
 
-public class Pericia {
+public class Pericia implements Serializable{
 	private String nome;
 	private boolean graduado;
 	private Atributos modificador;

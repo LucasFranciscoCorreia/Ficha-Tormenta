@@ -1,8 +1,10 @@
 package br.ufrpe.negocios.beans;
 
+import java.io.Serializable;
+
 import br.ufrpe.exceptions.MoedasInsuficientesException;
 
-public enum Moedas {
+public enum Moedas implements Serializable {
 	TS(0, 0), TP(0, 1), TO(0, 2),TL(0, 3);
 	private int i;
 	private final int prioridade;

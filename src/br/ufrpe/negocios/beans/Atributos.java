@@ -1,5 +1,8 @@
 package br.ufrpe.negocios.beans;
-public enum Atributos {
+
+import java.io.Serializable;
+
+public enum Atributos implements Serializable{
 	Força(0), Destreza(0), Constituicao(0), Inteligencia(0), Sabedoria(0), Carisma(0); 
 	
 	private int i;
@@ -9,13 +12,19 @@ public enum Atributos {
 	public void setValorAtributo(int i){
 		this.i = i;
 	}
-	int getValorAtributo(){
+	public int getValorAtributo(){
 		return this.i;
 	}
-	void subirNivel(){
+	public void subirNivel(){
 		this.i++;
 	}
-	int getModificador(){
+	public void descerNivel(){
+		this.i--;
+	}
+	public void addValor(int i){
+		this.i += i;
+	}
+	public int getModificador(){
 		return (i/2) - 5;
 	}
 }

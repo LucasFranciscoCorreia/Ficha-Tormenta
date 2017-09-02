@@ -1,5 +1,8 @@
 package br.ufrpe.negocios.beans;
-public class Armadura extends Item{
+
+import java.io.Serializable;
+
+public class Armadura extends Item implements Serializable{
 	private int bonusCA;
 	private int bonusMaxDes;
 	private int penalidadeArmadura;

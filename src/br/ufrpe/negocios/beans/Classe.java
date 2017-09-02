@@ -1,8 +1,9 @@
 package br.ufrpe.negocios.beans;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Classe {
+public class Classe implements Serializable {
 	private String nome;
 	List<HabilidadeDeClasse> habilidades;
 	private float BBA; 
@@ -73,8 +74,7 @@ public class Classe {
 	
 	
 
-	public Classe(String nome, List<HabilidadeDeClasse> habilidades, float bBA, byte nivel, boolean magica, int pVInicial, byte pVPorNivel, int pMInicial, byte pMPorNivel) {
-		super();
+	public Classe(String nome, List<HabilidadeDeClasse> habilidades, float bBA, byte nivel, boolean magica, int pVInicial, int pVPorNivel, int pMInicial, int pMPorNivel) {
 		this.nome = nome;
 		this.habilidades = habilidades;
 		BBA = bBA;

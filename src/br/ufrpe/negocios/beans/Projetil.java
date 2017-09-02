@@ -1,5 +1,8 @@
 package br.ufrpe.negocios.beans;
-public class Projetil extends Item{
+
+import java.io.Serializable;
+
+public class Projetil extends Item implements Serializable{
 	private boolean neededAmmo;
 	private String beneficio;
 	private int quantidade;

@@ -1,8 +1,10 @@
 package br.ufrpe.negocios.beans;
 
+import java.io.Serializable;
+
 import br.ufrpe.exceptions.AtributoInvalidoException;
 
-public class Resistencias {
+public class Resistencias{
 	public static int getTesteFortitude(int meioNivel, Atributos constituicao, int outros) throws AtributoInvalidoException{
 		if(constituicao == Atributos.Constituicao){
 			return meioNivel+constituicao.getModificador() + outros;

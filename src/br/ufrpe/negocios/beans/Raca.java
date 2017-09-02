@@ -1,14 +1,19 @@
 package br.ufrpe.negocios.beans;
 
+import java.io.Serializable;
+import java.util.LinkedList;
 import java.util.List;
 
-public class Raca {
+public class Raca implements Serializable{
 	private String nome;
-	private List<TracosRaciais> tracos;
+	private List<String> tracos;
+	private List<TracosRaciais> raciais;
 	
 	public Raca(String nome, List<TracosRaciais> tracos){
+		this.tracos = new LinkedList<>();
+		this.raciais = new LinkedList<>();
 		this.nome = nome;
-		this.tracos = tracos;
+		this.setTracosRaciais(tracos);
 	}
 
 	public String getNome() {
@@ -19,12 +24,18 @@ public class Raca {
 		this.nome = nome;
 	}
 
-	public List<TracosRaciais> getTracosRaciais() {
+	public List<String> getTracos() {
 		return tracos;
+	}
+	
+	public List<TracosRaciais> getRaciais(){
+		return raciais;
 	}
 
 	public void setTracosRaciais(List<TracosRaciais> tracosRaciais) {
-		this.tracos = tracosRaciais;
+		for(TracosRaciais r: tracosRaciais)
+			tracos.add(r.getTracosRaciais());
+		raciais = tracosRaciais;
 	}
 	
 	

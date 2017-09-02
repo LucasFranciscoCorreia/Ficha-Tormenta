@@ -1,5 +1,6 @@
 package br.ufrpe.repositorios;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import br.ufrpe.exceptions.ClasseJaCadastradoException;
 import br.ufrpe.exceptions.ClasseNaoExisteException;
 import br.ufrpe.negocios.beans.Classe;
 
-public class Classes {
+public class Classes implements Serializable{
 	private List<Classe> classes;
 	public Classes(){
 		classes = new LinkedList<>();
@@ -27,5 +28,8 @@ public class Classes {
 		}else{
 			throw new ClasseNaoExisteException(c);
 		}
+	}
+	public List<Classe> getClasses(){
+		return classes;
 	}
 }

@@ -1,5 +1,8 @@
 package br.ufrpe.negocios.beans;
-public class HabilidadeDeClasse {
+
+import java.io.Serializable;
+
+public class HabilidadeDeClasse implements Serializable{
 	private String nome, descricao, beneficio;
 
 	public HabilidadeDeClasse(String nome, String descricao, String beneficio) {

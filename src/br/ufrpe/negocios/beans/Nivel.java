@@ -1,8 +1,11 @@
 package br.ufrpe.negocios.beans;
 
+import java.io.Serializable;
+
+import br.ufrpe.Principal.ScreenManager;
 import br.ufrpe.exceptions.NivelInvalidoException;
 
-public class Nivel {
+public class Nivel implements Serializable{
 
 	private int lvlAtual;
 	private int expAtual;
@@ -28,7 +31,6 @@ public class Nivel {
 		this.expAtual = expProximoNivel;
 		this.expProximoNivel += i*1000;
 		this.lvlAtual++;
-		//TODO subir nivel de personagem, classe  e alterar exp para proximo nivel
 	}
 
 

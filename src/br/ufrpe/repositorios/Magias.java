@@ -1,5 +1,6 @@
 package br.ufrpe.repositorios;
 
+import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -8,7 +9,7 @@ import br.ufrpe.exceptions.MagiaNaoCadastradaException;
 import br.ufrpe.negocios.beans.Magia;
 
 
-public class Magias {
+public class Magias implements Serializable{
 	private List<Magia> magias;
 
 	public Magias(){

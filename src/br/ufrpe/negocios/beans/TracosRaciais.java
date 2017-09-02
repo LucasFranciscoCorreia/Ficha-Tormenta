@@ -1,7 +1,9 @@
 package br.ufrpe.negocios.beans;
 
-public class TracosRaciais {
-	String tracosRaciais;
+import java.io.Serializable;
+
+public class TracosRaciais implements Serializable{
+	private String tracosRaciais;
 
 	public TracosRaciais(String tracoRacial) {
 		this.tracosRaciais = tracoRacial;

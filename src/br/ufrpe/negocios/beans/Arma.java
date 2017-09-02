@@ -1,5 +1,8 @@
 package br.ufrpe.negocios.beans;
-public class Arma extends Item{
+
+import java.io.Serializable;
+
+public class Arma extends Item implements Serializable{
 	
 	
 	private boolean ranged;
