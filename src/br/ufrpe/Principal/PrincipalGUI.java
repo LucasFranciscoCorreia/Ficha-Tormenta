@@ -10,9 +10,8 @@ import javafx.stage.Stage;
 public class PrincipalGUI extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
-		Scene scene = new Scene(FXMLLoader.load(getClass().getResource("model/primeirocadastro.fxml")));
-		primaryStage.setScene(scene);
-		primaryStage.show();
+		ScreenManager.getInstance().setStage(primaryStage);;
+		ScreenManager.getInstance().telaInicial();
 	}
 
 	public static void main(String[] args) {

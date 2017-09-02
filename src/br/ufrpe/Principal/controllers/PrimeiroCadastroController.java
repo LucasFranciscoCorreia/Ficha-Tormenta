@@ -10,6 +10,7 @@ import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 
+import br.ufrpe.Principal.ScreenManager;
 import br.ufrpe.negocios.beans.HabilidadeDeClasse;
 import br.ufrpe.negocios.beans.Tendencia;
 import br.ufrpe.negocios.beans.TracosRaciais;
@@ -59,7 +60,7 @@ public class PrimeiroCadastroController implements Initializable{
 
 	List<HabilidadeDeClasse> habilidades;
 	
-	List<String> tracosR;
+	List<TracosRaciais> tracosR;
 
 	public void gerar(ActionEvent e){
 		
@@ -67,17 +68,23 @@ public class PrimeiroCadastroController implements Initializable{
 
 	public void addTracoRacial(ActionEvent e){
 		if(tracoRacial.getText().isEmpty()){
-			//TODO vazio
+			ScreenManager.getInstance().showWarning("Escreva algum traço racial para o seu personagem");
 		}else{
-			tracosR.add(tracoRacial.getText());
-			TracosRaciais t = new TracosRaciais();
-			t.setTracosRaciais(tracosR);
-			tracosRaciais.setItems(FXCollections.observableArrayList(t));
+			tracosR.add(new TracosRaciais(tracoRacial.getText()));
+			tracosRaciais.setItems(FXCollections.observableArrayList(tracosR));
+			tracoRacial.setText("");
 		}
 	}
 	
 	public void editarTracoRacial(ActionEvent e){
-		
+		TracosRaciais h = tracosRaciais.getSelectionModel().getSelectedItem();
+		if(h != null){
+			tracoRacial.setText(h.getTracosRaciais());
+			tracosR.remove(h);
+			tracosRaciais.setItems(FXCollections.observableArrayList(tracosR));
+		}else{
+			ScreenManager.getInstance().showWarning("Selecione um traço racial do seu personagem");
+		}
 	}
 	
 	public void editarHabilidade(ActionEvent e){
@@ -90,13 +97,13 @@ public class PrimeiroCadastroController implements Initializable{
 			habilidades.remove(h);
 			tabelaHabilidades.setItems(FXCollections.observableArrayList(habilidades));
 		}else{
-			//TODO item nao selecionado
+			ScreenManager.getInstance().showWarning("Selecione uma habilidade para alterar");
 		}
 	}
 
 	public void addHabilidade(ActionEvent e){
 		if(descricaoHabilidade.getText().isEmpty() || beneficioHabilidade.getText().isEmpty() || habilidadeClasse.getText().isEmpty()){
-			//TODO itens faltando
+			ScreenManager.getInstance().showWarning("Preencha todos os espaços para adicionar uma habilidade");
 		}else{
 			habilidades.add(new HabilidadeDeClasse(habilidadeClasse.getText(), descricaoHabilidade.getText(), beneficioHabilidade.getText()));
 			tabelaHabilidades.setItems(FXCollections.observableArrayList(habilidades));
@@ -107,23 +114,29 @@ public class PrimeiroCadastroController implements Initializable{
 	}
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
+		
 		tracosR = new ArrayList<>();
 		habilidades = new ArrayList<>();
+		
 		habilidadeNome.setCellValueFactory(new PropertyValueFactory<HabilidadeDeClasse,String>("nome"));
 		habilidadeNome.setResizable(false);
 		habilidadeDescricao.setCellValueFactory(new PropertyValueFactory<HabilidadeDeClasse,String>("descricao"));
 		habilidadeDescricao.setResizable(false);
 		habilidadeBeneficio.setCellValueFactory(new PropertyValueFactory<HabilidadeDeClasse,String>("beneficio"));
 		habilidadeBeneficio.setResizable(false);
-		//tracos.setCellValueFactory(new PropertyValueFactory<ArrayList, String>("tracosRaciais"));
+		
+		tracos.setCellValueFactory(new PropertyValueFactory<TracosRaciais, String>("tracosRaciais"));
 		tracos.setResizable(false);
+		
 		bba.setItems(FXCollections.observableArrayList("1/2","3/4","1"));
 		tamanho.setItems(FXCollections.observableArrayList("Infimo", "Diminuto", "Minimo", "Pequeno", "Medio", "Grande", "Enorme", "Descomunal","Colossal"));
 		tendencia.setItems(FXCollections.observableArrayList(Tendencia.values()));
+		
 		List<Integer> valores = new ArrayList<>();
 		for(int i = 1; i <=20;i++){
 			valores.add(i);
 		}
+		
 		carisma.setItems(FXCollections.observableArrayList(valores));
 		forca.setItems(FXCollections.observableArrayList(valores));
 		inteligencia.setItems(FXCollections.observableArrayList(valores));
@@ -131,7 +144,5 @@ public class PrimeiroCadastroController implements Initializable{
 		destreza.setItems(FXCollections.observableArrayList(valores));
 		sabedoria.setItems(FXCollections.observableArrayList(valores));
 		nivel.setItems(FXCollections.observableArrayList(valores));
-
 	}
-
 }

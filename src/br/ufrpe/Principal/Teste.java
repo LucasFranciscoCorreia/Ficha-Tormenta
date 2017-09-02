@@ -8,7 +8,6 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.TitledPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-/*from   ww w . j a  v a 2s  .  c  o  m*/
 public class Teste extends Application {
   public static void main(String[] args) {
     launch(args);

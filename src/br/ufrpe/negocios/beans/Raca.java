@@ -4,9 +4,9 @@ import java.util.List;
 
 public class Raca {
 	private String nome;
-	private TracosRaciais tracos;
+	private List<TracosRaciais> tracos;
 	
-	public Raca(String nome, TracosRaciais tracos){
+	public Raca(String nome, List<TracosRaciais> tracos){
 		this.nome = nome;
 		this.tracos = tracos;
 	}
@@ -19,12 +19,12 @@ public class Raca {
 		this.nome = nome;
 	}
 
-	public List<String> getTracosRaciais() {
-		return tracos.getTracosRaciais();
+	public List<TracosRaciais> getTracosRaciais() {
+		return tracos;
 	}
 
-	public void setTracosRaciais(List<String> tracosRaciais) {
-		this.tracos.setTracosRaciais(tracosRaciais);
+	public void setTracosRaciais(List<TracosRaciais> tracosRaciais) {
+		this.tracos = tracosRaciais;
 	}
 	
 	

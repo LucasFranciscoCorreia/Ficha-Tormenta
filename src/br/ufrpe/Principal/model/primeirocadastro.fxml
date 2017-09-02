@@ -38,51 +38,51 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                <children>
-                  <TextArea fx:id="raca" layoutX="32.4" layoutY="14.0" prefHeight="46.0" prefWidth="456.0" promptText="Raça" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="20.0" />
-                  <TextArea fx:id="tracoRacial" layoutX="32.0" layoutY="80.0" prefHeight="79.0" prefWidth="435.0" promptText="Traço Racial" />
-                  <TableView fx:id="tracosRaciais" layoutX="30.0" layoutY="166.0" prefHeight="90.0" prefWidth="440.0">
+                  <TextArea fx:id="raca" layoutX="36.0" layoutY="14.0" prefHeight="42.0" prefWidth="448.0" promptText="Raça" AnchorPane.leftAnchor="36.0" AnchorPane.rightAnchor="34.799999999999955" />
+                  <TextArea fx:id="tracoRacial" layoutX="32.0" layoutY="65.0" prefHeight="26.0" prefWidth="435.0" promptText="Traço Racial" />
+                  <TableView fx:id="tracosRaciais" layoutX="30.0" layoutY="115.0" prefHeight="154.0" prefWidth="440.0">
                      <columns>
                         <TableColumn fx:id="tracos" prefWidth="439.0" text="Traços Raciais" />
                      </columns>
                   </TableView>
-                  <JFXButton fx:id="adicionarTracoRacial" buttonType="RAISED" layoutX="388.0" layoutY="262.0" onAction="#addTracoRacial" text="Adicionar" />
-                  <HBox alignment="CENTER" layoutX="30.0" layoutY="298.0" prefHeight="37.0" prefWidth="114.0">
+                  <JFXButton fx:id="adicionarTracoRacial" buttonType="RAISED" layoutX="388.0" layoutY="277.0" onAction="#addTracoRacial" text="Adicionar" />
+                  <HBox alignment="CENTER" layoutX="30.0" layoutY="313.0" prefHeight="37.0" prefWidth="114.0">
                      <children>
                         <Label prefHeight="24.0" prefWidth="41.0" text="For" textAlignment="CENTER" />
                         <JFXComboBox fx:id="forca" prefHeight="26.0" prefWidth="100.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="193.0" layoutY="298.0" prefHeight="37.0" prefWidth="114.0">
+                  <HBox alignment="CENTER" layoutX="193.0" layoutY="313.0" prefHeight="37.0" prefWidth="114.0">
                      <children>
                         <Label prefHeight="24.0" prefWidth="41.0" text="Con" textAlignment="CENTER" />
                         <JFXComboBox fx:id="constituicao" prefHeight="26.0" prefWidth="100.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="371.0" layoutY="298.0" prefHeight="37.0" prefWidth="114.0">
+                  <HBox alignment="CENTER" layoutX="371.0" layoutY="313.0" prefHeight="37.0" prefWidth="114.0">
                      <children>
                         <Label prefHeight="24.0" prefWidth="41.0" text="Des" textAlignment="CENTER" />
                         <JFXComboBox fx:id="destreza" prefHeight="26.0" prefWidth="100.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="30.0" layoutY="362.0" prefHeight="37.0" prefWidth="114.0">
+                  <HBox alignment="CENTER" layoutX="30.0" layoutY="377.0" prefHeight="37.0" prefWidth="114.0">
                      <children>
                         <Label prefHeight="24.0" prefWidth="41.0" text="Int" textAlignment="CENTER" />
                         <JFXComboBox fx:id="inteligencia" prefHeight="26.0" prefWidth="100.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="192.0" layoutY="362.0" prefHeight="37.0" prefWidth="114.0">
+                  <HBox alignment="CENTER" layoutX="192.0" layoutY="377.0" prefHeight="37.0" prefWidth="114.0">
                      <children>
                         <Label prefHeight="24.0" prefWidth="41.0" text="Sab" textAlignment="CENTER" />
                         <JFXComboBox fx:id="sabedoria" prefHeight="26.0" prefWidth="100.0" />
                      </children>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="371.0" layoutY="362.0" prefHeight="37.0" prefWidth="114.0">
+                  <HBox alignment="CENTER" layoutX="371.0" layoutY="377.0" prefHeight="37.0" prefWidth="114.0">
                      <children>
                         <Label prefHeight="24.0" prefWidth="41.0" text="Car" textAlignment="CENTER" />
                         <JFXComboBox fx:id="carisma" prefHeight="26.0" prefWidth="100.0" />
                      </children>
                   </HBox>
-                  <JFXButton fx:id="editarTraco" layoutX="284.0" layoutY="262.0" onAction="#editarTracoRacial" prefHeight="26.0" prefWidth="87.0" text="Editar" />
+                  <JFXButton fx:id="editarTraco" layoutX="284.0" layoutY="277.0" onAction="#editarTracoRacial" prefHeight="26.0" prefWidth="87.0" text="Editar" />
                </children>
             </AnchorPane>
          </content>

@@ -1,20 +1,17 @@
 package br.ufrpe.negocios.beans;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class TracosRaciais {
-	List<String> tracosRaciais;
+	String tracosRaciais;
 
-	public TracosRaciais() {
-		tracosRaciais = new LinkedList<>();
+	public TracosRaciais(String tracoRacial) {
+		this.tracosRaciais = tracoRacial;
 	}
 
-	public List<String> getTracosRaciais() {
+	public String getTracosRaciais() {
 		return tracosRaciais;
 	}
 
-	public void setTracosRaciais(List<String> tracosRaciais) {
+	public void setTracosRaciais(String tracosRaciais) {
 		this.tracosRaciais = tracosRaciais;
 	}
 	
